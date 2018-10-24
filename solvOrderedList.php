@@ -1,29 +1,29 @@
 <?php
-
-    require("unOrderedList.php");
-    $ls = new UnOrderedList();
+    require("OrderedList.php");
+    $os = new OrderedList();
     //get string from file
     $str = Utility::readFl("test.txt");
     //store each element in array
     $sArr = explode(" ",$str);
     //add in orderd link list
     foreach ($sArr as $key) {
-        $ls->add($key);
+         $os->add($key);
     }
-    $ls->show();
+    $os->show();
     //user input
-    echo "enter word\n";
-    $check = trim(fgets(STDIN));
+    echo "enter number\n";
+    $check = Utility::getInt();
     //search and if get then remove elemente from list and write file
-    if ($ls->search($check)) {
-        $ls->remove($check);
-        $str = $ls->getStr();
+    if ($os->search($check)) {
+        $os->remove($check);
+        $str = $os->getStr();
         Utility::writeFl($str,"test.txt");
     } 
     //else add elemenet and write file
     else {
-        $ls->add($check);
-        $str = $ls->getStr();
+        $os->add($check);
+        $str = $os->getStr();
         Utility::writeFl($str,"test.txt");
     }
+    //14523
 ?>
