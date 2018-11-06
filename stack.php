@@ -58,7 +58,7 @@
             }
             //1245
             $this->tail = $temp2;
-            $temp2 = $this->tail;
+            $temp2->next = null;
             $this->count--;
             return $temp;
         }

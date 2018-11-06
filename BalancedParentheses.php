@@ -22,7 +22,7 @@
         //else if it get close parentheses the pop
         elseif ($key == ")") {
             if ($st->isEmpty()) {
-                echo "false\n";
+                echo "not balace\n";
                return;
             }
             $st->pop();
